@@ -1,0 +1,10 @@
+node_modules/
+.env
+.expo/
+dist/
+pipeline/.venv/
+pipeline/out/
+pipeline/assets/kokoro/
+__pycache__/
+.pytest_cache/
+*.mp3
