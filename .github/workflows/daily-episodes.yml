@@ -2,8 +2,11 @@ name: Daily episodes
 
 on:
   schedule:
-    # 09:15 UTC = 4:15am EST / 5:15am EDT. GitHub can start scheduled jobs late,
-    # so this leaves time to finish before the 7am ET notification.
+    # GitHub often starts scheduled jobs hours late, so try three times overnight
+    # (about 12:15am, 2:15am and 4:15am Eastern). Users who already have today's
+    # episode are skipped, so the later runs only fill gaps.
+    - cron: "15 5 * * *"
+    - cron: "15 7 * * *"
     - cron: "15 9 * * *"
   workflow_dispatch:
     inputs:
